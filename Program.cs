@@ -24,7 +24,7 @@ builder.Services.AddAuthentication()
                     googleOptions.ClientSecret = GoogleClientSecret;// Configuration["Google:ClientSecret"];
                 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IEmailSender>(s => new GaryKAuthProject.Services.StubEmailProvider(builder.Configuration));
