@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GaryKAuthProject.Data;
 using GaryKAuthProject.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace GaryKAuthProject.Controllers
 {
+    [Authorize(Roles = Role.ADMINISTRATOR_ROLE)]
     public class IngredientsController : Controller
     {
         private readonly ApplicationDbContext _context;

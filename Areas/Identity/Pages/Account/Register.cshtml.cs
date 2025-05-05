@@ -24,6 +24,7 @@ using Microsoft.Extensions.Logging;
 
 namespace GaryKAuthProject.Areas.Identity.Pages.Account
 {
+    [AllowAnonymous]
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<IdentityUser> _signInManager;
